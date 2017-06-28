@@ -84,9 +84,15 @@ The configuration file is already set as compilerconfig.json. It will take the i
  
   /* Also notice how non descriptive ".paragraphBody" is. */
   ```
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+  * [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
   
-  [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
-
 ### File Structure 
 
 * We will be working from the /sass folder. 
