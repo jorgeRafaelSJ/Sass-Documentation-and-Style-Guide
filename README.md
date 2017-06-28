@@ -9,8 +9,10 @@ The configuration file is already set as compilerconfig.json. It will take the i
 ### Naming
 
 * Dashes instead of camelCase!
+  * [READ THIS!](https://csswizardry.com/2010/12/css-camel-case-seriously-sucks/)
+  
   ```scss 
-  //bad
+  //yuck
   .camelCaseCssIsCluttered {}
   
   //good
@@ -22,7 +24,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 * Dashes instead of underscores!
 
   ```scss
-  //bad
+  //ugh
   .this_requires_more_keystrokes {}
   
   //good
@@ -32,9 +34,9 @@ The configuration file is already set as compilerconfig.json. It will take the i
   ```
 
 * Semantic & feature related naming
-
+  * [Here's why...](https://maintainablecss.com/chapters/semantics/)
   ```scss
-  //not good
+  //gahhhhhh
   .form {} 
   #logo {}
   .errorBody {}
@@ -82,7 +84,6 @@ The configuration file is already set as compilerconfig.json. It will take the i
  
   /* Also notice how non descriptive ".paragraphBody" is. */
   ```
-  Other sources: https://csswizardry.com/2010/12/css-camel-case-seriously-sucks/
 
 ### File Structure 
 
@@ -102,9 +103,13 @@ The configuration file is already set as compilerconfig.json. It will take the i
   * /views - Styles belonging exclusively to an html file under /Views. Named the same.  
   * Component Files - buttons.scss, links.scss, content-panel.scss. (This is our goal.) 
   
-### Sass - What we can do now! 
+## Sass - What we can do now! 
+* [LEARN MORE...](http://sass-lang.com/guide)
+* [Playground](https://www.sassmeister.com/)
+* [Why Sass](https://www.keycdn.com/blog/sass-vs-less/)
+* [This is just a cool idea.](https://blog.prototypr.io/sass-maps-to-ui-components-f14e1f34412e)
 
-* &:hover, &:active, &:focus 
+### &:hover, &:active, &:focus 
 ```scss
 //OLD WAY
 .we-have-this-long-selector, .oh-and-this-one-as-well {
@@ -136,7 +141,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 
 /* It will be taken care of when it compiles. Thanks Sass! More maintainable! */ 
 ```
-* Media tag mixins
+### Media tag mixins
 
 ```scss
 
@@ -211,17 +216,22 @@ The configuration file is already set as compilerconfig.json. It will take the i
   }
 }
 
-.some-other-class {
-  width: 100%; 
-  
-  @include min(sm) {
+COMPILES TO...
+
+.some-class {
+  width: 50%; 
+}
+@media screen and (max-width: 768px) {
+  .some-class {
     width: 75%; 
   }
-  
-  @include min(lg) {
-    width: 50%; 
+}
+@media screen and (max-width: 330px) {
+  .some-class {
+    width: 100%; 
   }
 }
+
 
 /* Would like to move in a direction where we don't combine min and max for the same element. 
   Being that our focus is not mobile first using max makes more sense. */ 
@@ -231,25 +241,26 @@ The configuration file is already set as compilerconfig.json. It will take the i
 
 Media tags that do not lie inside 
 
-* Cross browser compatibility mixin
+### Cross browser compatibility mixin
 ```scss 
 
 /* $exclude is an optional parameter, used for properties like "transition" in which -ms- is not valid */ 
 
 @mixin browsers($property, $value, $exclude:"") {
-  @if $exclude != webkit {
+
+  @if index($exclude, webkit) == null {
     -webkit-#{$property}: $value;
   }
 
-  @if $exclude != moz {
+  @if index($exclude, moz) == null {
     -moz-#{$property}: $value;
   }
 
-  @if $exclude != ms {
+  @if index($exclude, ms) == null {
     -ms-#{$property}: $value;
   }
 
-  @if $exclude != o {
+  @if index($exclude, o) == null {
     -o-#{$property}: $value;
   }
 
@@ -258,7 +269,11 @@ Media tags that do not lie inside
 ```
 ```scss
 .spinner .rect2 {
-    @include browsers(animation-delay, -1.1s, ms);
+   @include browsers(animation-delay, -1.1s, ms);
+}
+
+.all-games {
+   @include browsers(example, not-real, (webkit, moz));
 }
 
 COMPILES TO...
@@ -270,8 +285,14 @@ COMPILES TO...
   animation-delay: -1.1s; 
 }
 
+.all-games {
+  -ms-example: not-real;
+  -o-example: not-real;
+  example: not-real;
+}
+
 ```
-* Flex Center
+### Flex Center
 ```scss
 @mixin flex-center {
   display: flex;
@@ -297,4 +318,13 @@ COMPILES TO...
 ```
 
 ### Colors
+
+There is a colors file (/Content/sass/modules/colors.scss). There should be no new use of hex, rgb, or rgba in ANY of the partials. Only use predefined variables ($primary, $secondary... and so on) as defined in the colors file. Adding a color should require vetting. DO NOT add colors just because. Benefits of this approach: 
+  * No color inconsistencies accross platform. 
+  * Zero time spent memorizing color codes.
+  * Easy color updates accross platform. 
+  * Ease of tracking color use via global search (only one syntax per color). 
+
 ### Other No-no's 
+
+
