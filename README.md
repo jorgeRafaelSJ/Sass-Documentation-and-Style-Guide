@@ -145,7 +145,6 @@ The configuration file is already set as compilerconfig.json. It will take the i
 /* It will be taken care of when it compiles. Thanks Sass! More maintainable! */ 
 ```
 ### Media tag mixins
-
 ```sass
 
 //THE GOODS
@@ -203,6 +202,9 @@ The configuration file is already set as compilerconfig.json. It will take the i
   }
 }
 ```
+
+#### From now on media tags will always go inside a selector.
+
 ```scss
 
 //How to use the media tags!
@@ -239,10 +241,6 @@ COMPILES TO...
 /* Would like to move in a direction where we don't combine min and max for the same element. 
   Being that our focus is not mobile first using max makes more sense. */ 
 ```
-
-#### What does this mean? 
-
-Media tags that do not lie inside 
 
 ### Cross browser compatibility mixin
 ```sass 
