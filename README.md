@@ -144,55 +144,55 @@ The configuration file is already set as compilerconfig.json. It will take the i
 
 //max-width media tag mixin
 @mixin max($size) {
-    @if $size == xs {
-        @media screen and (max-width: 330px) {
-            @content;
-        }
+  @if $size == xs {
+    @media screen and (max-width: 330px) {
+      @content;
     }
-    @else if $size == sm {
-        @media screen and (max-width: 576px) {
-            @content;
-        }
+  }
+  @else if $size == sm {
+    @media screen and (max-width: 576px) {
+      @content;
     }
-    @else if $size == md {
-        @media screen and (max-width: 768px) {
-            @content;
-        }
+  }
+  @else if $size == md {
+    @media screen and (max-width: 768px) {
+      @content;
     }
-    @else if $size == lg {
-        @media screen and (max-width: 1200px) {
-            @content;
-        }
+  }
+  @else if $size == lg {
+    @media screen and (max-width: 1200px) {
+      @content;
     }
+  }
 }
 
 //min-width media tag mixin
 @mixin min($size) {
-    @if $size == xs {
-        @media screen and (min-width: 330px) {
-            @content;
-        }
+  @if $size == xs {
+    @media screen and (min-width: 330px) {
+      @content;
     }
-    @else if $size == sm {
-        @media screen and (min-width: 576px) {
-            @content;
-        }
+  }
+  @else if $size == sm {
+    @media screen and (min-width: 576px) {
+      @content;
     }
-    @else if $size == md {
-        @media screen and (min-width: 768px) {
-            @content;
-        }
+  }
+  @else if $size == md {
+    @media screen and (min-width: 768px) {
+      @content;
     }
-    @else if $size == lg {
-        @media screen and (min-width: 992px) {
-            @content;
-        }
+  }
+  @else if $size == lg {
+    @media screen and (min-width: 992px) {
+      @content;
     }
-    @else if $size == xl {
-        @media screen and (min-width: 1200px) {
-            @content;
-        }
+  }
+  @else if $size == xl {
+    @media screen and (min-width: 1200px) {
+      @content;
     }
+  }
 }
 ```
 ```scss
@@ -224,7 +224,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 }
 
 /* Would like to move in a direction where we don't combine min and max for the same element. 
-  Being that we are not mobile first, using max makes more sense. Regardless, there is min legacy so we need it. */ 
+  Being that our focus is not mobile first using max makes more sense. */ 
 ```
 
 #### What does this mean? 
@@ -237,23 +237,23 @@ Media tags that do not lie inside
 /* $exclude is an optional parameter, used for properties like "transition" in which -ms- is not valid */ 
 
 @mixin browsers($property, $value, $exclude:"") {
-    @if $exclude != webkit {
-        -webkit-#{$property}: $value;
-    }
+  @if $exclude != webkit {
+    -webkit-#{$property}: $value;
+  }
 
-    @if $exclude != moz {
-        -moz-#{$property}: $value;
-    }
+  @if $exclude != moz {
+    -moz-#{$property}: $value;
+  }
 
-    @if $exclude != ms {
-        -ms-#{$property}: $value;
-    }
+  @if $exclude != ms {
+    -ms-#{$property}: $value;
+  }
 
-    @if $exclude != o {
-        -o-#{$property}: $value;
-    }
-    
-    #{$property}: $value;
+  @if $exclude != o {
+    -o-#{$property}: $value;
+  }
+
+  #{$property}: $value;
 }
 ```
 ```scss
@@ -272,6 +272,29 @@ COMPILES TO...
 
 ```
 * Flex Center
+```scss
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+```scss
+
+.some-class {
+  color: $white75;
+  @include flex-center;
+}
+
+COMPILES TO...
+
+.some-class {
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
 
 ### Colors
 ### Other No-no's 
