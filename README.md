@@ -42,7 +42,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
   .errorBody {}
   
   /* What form/logo? What does this selector affect? 
-  Unless this is the ONLY header in the entire application, be specific. */
+  Unless this is the ONLY form/logo/errorBody in the entire application, be specific. */
 
   //better
   #registration-form {}
@@ -84,6 +84,8 @@ The configuration file is already set as compilerconfig.json. It will take the i
  
   /* Also notice how non descriptive ".paragraphBody" is. */
   ```
+  
+  [Google's HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
 
 ### File Structure 
 
