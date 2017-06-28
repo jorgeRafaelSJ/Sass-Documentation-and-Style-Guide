@@ -11,7 +11,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 * Dashes instead of camelCase!
   * [READ THIS!](https://csswizardry.com/2010/12/css-camel-case-seriously-sucks/)
   
-  ```scss 
+  ```sass
   //yuck
   .camelCaseCssIsCluttered {}
   
@@ -23,7 +23,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 
 * Dashes instead of underscores!
 
-  ```scss
+  ```sass
   //ugh
   .this_requires_more_keystrokes {}
   
@@ -51,7 +51,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
   
   /* If an element is going to be reused THEN find a more flexible name and reorganize accordingly. */
   ```
-  ```scss
+  ```sass
   //boo
   .navbar-default .navbar-nav > li > a {}
 
@@ -67,7 +67,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
   whats affecting which elements. */ 
     
   ```
-  ```scss
+  ```sass
   
   //meh
   #welcomeBody, .efmErrorBody, .errorBody, .paragraphBody {}
@@ -110,7 +110,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 * [This is just a cool idea.](https://blog.prototypr.io/sass-maps-to-ui-components-f14e1f34412e)
 
 ### &:hover, &:active, &:focus 
-```scss
+```sass
 //OLD WAY
 .we-have-this-long-selector, .oh-and-this-one-as-well {
   background-color: transparent;
@@ -143,7 +143,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
 ```
 ### Media tag mixins
 
-```scss
+```sass
 
 //THE GOODS
 
@@ -242,7 +242,7 @@ COMPILES TO...
 Media tags that do not lie inside 
 
 ### Cross browser compatibility mixin
-```scss 
+```sass 
 
 /* $exclude is an optional parameter, used for properties like "transition" in which -ms- is not valid */ 
 
@@ -267,7 +267,7 @@ Media tags that do not lie inside
   #{$property}: $value;
 }
 ```
-```scss
+```sass
 .spinner .rect2 {
    @include browsers(animation-delay, -1.1s, ms);
 }
@@ -293,14 +293,14 @@ COMPILES TO...
 
 ```
 ### Flex Center
-```scss
+```sass
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 ```
-```scss
+```sass
 
 .some-class {
   color: $white75;
