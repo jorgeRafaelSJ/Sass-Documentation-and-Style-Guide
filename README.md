@@ -132,11 +132,6 @@ The configuration file is already set as compilerconfig.json. It will take the i
     background-color:$primary;
     color: $white75;
   }
-  
-  &:focus {
-    background-color: $light-primary; 
-    color: $white;
-  }
 }
 
 /* It will be taken care of when it compiles. Thanks Sass! More maintainable! */ 
