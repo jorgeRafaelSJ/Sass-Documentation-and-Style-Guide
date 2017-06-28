@@ -330,4 +330,8 @@ There is a colors file (/Content/sass/modules/colors.scss). There should be no n
 
 ### Other No-no's 
 
+##### DO NOT ADD OR USE any new styles to _media-tags-to-refactor.scss
+This file will be deprecated eventually as media tags get moved to where they belong. Do not add, and do not use any selectors from this file. Make a class using the naming convention. 
 
+##### Do NOT add any new styles to _bootstrap-overrides.scss OR _kendo-overrides.scss
+These two files should be on their way out. These elements should be in component files. As the components get reworked and restyled, these files will thin out and cease to exist. 
