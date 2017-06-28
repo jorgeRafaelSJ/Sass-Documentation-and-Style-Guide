@@ -64,7 +64,7 @@ The configuration file is already set as compilerconfig.json. It will take the i
   .main-navbar-link {}
   
   /* Also this is better for searchability. Too many children makes it really difficult to know
-  whats affecting which elements. */ 
+  whats affecting which elements. Also, it makes html much more descriptive in combination with dashes. */ 
     
   ```
   ```sass
