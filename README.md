@@ -318,7 +318,7 @@ COMPILES TO...
   animation-delay: -1.1s; 
 }
 
-.all-games {
+.beep-boop {
   -ms-example: not-real;
   -o-example: not-real;
   example: not-real;
