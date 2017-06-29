@@ -1,5 +1,8 @@
 # Sass-Documentation-and-Style-Guide
 
+TO DO: 
+- Set production style bundle to 'styles.min.css' and debug bundle to 'styles.css' to allow for dev tools mapping. 
+
 ### Setup
 
 Download and Install: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler
@@ -323,9 +326,10 @@ COMPILES TO...
 }
 
 ```
-### Flex Center
+### Flex Center @extend
 ```sass
-@mixin flex-center {
+/* located in '/sass/modules/extends.scss'*/
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -334,18 +338,22 @@ COMPILES TO...
 ```sass
 
 .some-class {
+  @extend .flex-center;
   color: $white75;
-  @include flex-center;
 }
 
 COMPILES TO...
 
+.flex-center, .some-class {
+}
+
 .some-class {
   color: rgba(255,255,255,0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
+/* WATCH OUT: @extend is a very powerful tool but:
+  - Classes should be predetermined (Don't go extending all over, it gets wild)(Should be in extend.scss file)
+  - Only on root selectors(no children).
 ```
 
 ### Colors
