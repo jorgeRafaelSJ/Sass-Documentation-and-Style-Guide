@@ -134,7 +134,6 @@ The configuration file is already set as compilerconfig.json. It will take the i
 }
 
 //NEW WAY
-
 .very-specific-name {
   width: 100px;
  
@@ -345,6 +344,9 @@ COMPILES TO...
 COMPILES TO...
 
 .flex-center, .some-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .some-class {
