@@ -1,7 +1,10 @@
 # Sass-Documentation-and-Style-Guide
 
-TO DO: 
-- Set production style bundle to 'styles.min.css' and debug bundle to 'styles.css' to allow for dev tools mapping. 
+##### Sass === Syntactically Awesome StyleSheets
+
+##### What is a CSS preprocessor?
+
+A scripting language that extends CSS by allowing developers to write code in one language and then compile it into CSS. Some examples of CSS preprocessor include: Sass and LESS. [Why Sass?](https://www.keycdn.com/blog/sass-vs-less/)
 
 ### Setup
 
@@ -9,7 +12,7 @@ Download and Install: https://marketplace.visualstudio.com/items?itemName=MadsKr
 
 The configuration file is already set as compilerconfig.json. It will take the input in the Sass folder and compile into the output file located in the css folder. If you modify the output css file all your changes will be deleted when Sass is recompiled.
 
-### Naming
+### Naming Guide
 
 * Dashes instead of camelCase!
   * [READ THIS!](https://csswizardry.com/2010/12/css-camel-case-seriously-sucks/)
@@ -112,7 +115,6 @@ The configuration file is already set as compilerconfig.json. It will take the i
 
 * [LEARN MORE...](http://sass-lang.com/guide)
 * [Playground](https://www.sassmeister.com/)
-* [Why Sass](https://www.keycdn.com/blog/sass-vs-less/)
 * [This is just a cool idea.](https://blog.prototypr.io/sass-maps-to-ui-components-f14e1f34412e)
 
 
