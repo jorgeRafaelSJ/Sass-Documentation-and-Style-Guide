@@ -303,7 +303,7 @@ COMPILES TO...
 }
 ```
 ```sass
-.spinner .rect-2 {
+.spinner {
    @include browsers(animation-delay, -1.1s, ms);
 }
 
@@ -313,7 +313,7 @@ COMPILES TO...
 
 COMPILES TO...
 
-.spinner .rect-2 {
+.spinner {
   -webkit-animation-delay: -1.1s;
   -moz-animation-delay: -1.1s;
   -o-animation-delay: -1.1s;
